@@ -5,16 +5,20 @@ public class CheckLeapYear {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập năm cần kiểm tra: ");
         int year = sc.nextInt();
+        boolean isLeapYear = false;
+
         if(year % 4 == 0){
             if(year % 100 == 0){
                 if(year % 400 == 0){
-                    System.out.printf("%d is a leap year", year);
-                } else {
-                    System.out.printf("%d is NOT a leap year", year);
+                    isLeapYear = true;
                 }
             } else {
-                System.out.printf("%d is a leap year", year);
+                isLeapYear = true;
             }
+        }
+
+        if(isLeapYear){
+            System.out.printf("%d is a leap year", year);
         } else {
             System.out.printf("%d is NOT a leap year", year);
         }
